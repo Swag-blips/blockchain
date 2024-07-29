@@ -3,19 +3,25 @@ const Blockchain = require('./blockchain')
 
 const bitcoin = new Blockchain();
 
+const previousBlockHash = 'OINA3DFEFRH234GH2'
+const currentBlockData = [
+    {
+        "amount": 50,
+        "sender": "A1B2C3D4E5F6G7H8",
+        "recepient": "I9J0K1L2M3N4O5P6"
+    },
+    {
+        "amount": 20,
+        "sender": "QR8S9T0U1V2W3X4",
+        "recepient": "Y5Z6A7B8C9D0E1F2"
+    },
+    {
+        "amount": 35,
+        "sender": "G3H4I5J6K7L8M9N0",
+        "recepient": "O1P2Q3R4S5T6U7V8"
+    },
+]
 
-bitcoin.createNewBlock(8294584, "AD98KS72NS158", "0IAN509A9S9NF")
+const nonce = 100
 
-bitcoin.createNewTransaction(100, 'ALEXSDW09FNA', "JENN0AN09N0A9");
-
-bitcoin.createNewBlock(728932, "AD9898A2NS158", "0IAN50SSWJS9NF")
-
-bitcoin.createNewTransaction(50, 'ALEXSDW09FNA', "JENN0AN09N0A9");
-
-bitcoin.createNewTransaction(300, 'ALEXSDW09FNA', "JENN0AN09N0A9");
-
-bitcoin.createNewTransaction(2000, 'ALEXSDW09FNA', "JENN0AN09N0A9");
-
-bitcoin.createNewBlock(728932, "AD989DHEL2NS158", "0IANDLES9NF")
-
-console.log(bitcoin.chain[2]);
+console.log(bitcoin.hashBlock(previousBlockHash, currentBlockData, nonce))
