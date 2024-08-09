@@ -10,6 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/blockchain", function (req, res) {
   res.send(bitcoin);
+  
 });
 
 app.post("/transaction", function (req, res) {
